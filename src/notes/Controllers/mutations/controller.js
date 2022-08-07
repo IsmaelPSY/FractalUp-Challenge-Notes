@@ -15,21 +15,21 @@ const addNoteCont = (params) => {
 const deleteNoteCont = (id) => {
   const noteIndex = notes.findIndex( note => note.id == id);
   if(noteIndex == -1) throw new Error("Note not found");
-  notes.splice(studentIndex,1)
+  notes.splice(noteIndex,1)
   return "Note deleted sucessfully"
 }
 
 const editNoteStatusCont = (params) => {
   const {status,id} = params
-  const studentIndex = notes.findIndex( note => note.id == id);
+  const noteIndex = notes.findIndex( note => note.id == id);
   if(noteIndex == -1) throw new Error("Note not found");
   
-  const note = notes[studentIndex]
+  const note = notes[noteIndex]
   const updatedNote = {...note,status:status}
 
-  notes[statusIndex] = updatedNote
+  notes[noteIndex] = updatedNote
 
-  return updatedStudent
+  return updatedNote
 }
 
 module.exports = {

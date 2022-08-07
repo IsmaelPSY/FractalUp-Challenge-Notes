@@ -10,8 +10,8 @@ const studentCount = async() => {
   return students
 } 
 
-const allStudents = async() => {
-  const students = allStudentsCont()
+const allStudents = async(root,params) => {
+  const students = allStudentsCont(params)
   return students 
 }
 

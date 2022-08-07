@@ -12,8 +12,8 @@ const addStudent = async (root,params) => {
 
 const deleteStudent = (root,params) => {
   const {id} = params
-  const students = deleteStudentCont(id)
-  return students
+  const message = deleteStudentCont(id)
+  return message
 }
 
 const editStudentDir = async(root, params) => {

@@ -22,7 +22,7 @@ const deleteStudentCont = (id) => {
   const studentIndex = students.findIndex( student => student.id == id);
   if(studentIndex == -1) throw new Error("User not found");
   students.splice(studentIndex,1)
-  return students
+  return "Student deleted sucessfully"
 }
 
 const editStudentDirCont = (params) => {

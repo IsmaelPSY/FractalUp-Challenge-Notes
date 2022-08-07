@@ -6,8 +6,20 @@ const studentCountCont = () => {
   return students.length;
 }
 
-const allStudentsCont = () => {
-return students
+const allStudentsCont = (params) => {
+  if(!params.city) return students
+  const {city} = params
+  switch (city){
+    case "PUERTO_MALDONADO":
+      return students.filter(student => student.city === 'Puerto Maldonado')
+    break;
+    case "LIMA":
+      return students.filter(student => student.city === 'Lima')
+    break;
+    default:
+      return students
+  }
+
 } 
 
 const findStudentCont = (name) => {

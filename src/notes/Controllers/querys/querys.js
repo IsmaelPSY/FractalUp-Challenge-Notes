@@ -3,8 +3,7 @@ const {
 } = require('./controller.js')
 
 const allMyNotes = (root,params) => {
-  const {id} = params
-  const notes = (allMyNotesCont(id))
+  const notes = allMyNotesCont(params)
   return notes
 }
 

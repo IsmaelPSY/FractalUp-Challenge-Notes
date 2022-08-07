@@ -3,8 +3,13 @@ const {gql} = require('apollo-server');
 const typeDefs = gql`
 
 enum Place {
-  LIMA,
-  PUERTO MALDONADO
+  LIMA
+  PUERTO_MALDONADO
+}
+
+enum isDone {
+  COMPLETED
+  NOT_COMPLETED
 }
 
 type Address {
@@ -26,7 +31,7 @@ type Student {
 type Note {
   course: String!
   message: String!
-  status: Boolean
+  status: Boolean!
   student_id: ID!
   id: ID!
 }
@@ -34,10 +39,13 @@ type Note {
 type Query{
   
   studentCount: Int!
-  allStudents(city: Place!): [Student]!
+  allStudents(city: Place): [Student]!
   findStudent(name: String!): Student!
 
-  allMyNotes(id:ID!): [Note]!
+  allMyNotes(
+    id:ID!
+    status: isDone
+  ): [Note]!
 }
 
 type Mutation{
@@ -65,7 +73,7 @@ type Mutation{
     student_id: ID!
     course: String!
     message: String!
-    done: Boolean!
+    status: Boolean!
   ): Note!
 
   deleteNote(
