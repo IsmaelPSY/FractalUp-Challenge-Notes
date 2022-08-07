@@ -20,9 +20,11 @@ const {
   allMyNotes
  } = require('./notes/Controllers/querys/querys.js');
 //Mutations
-// import {
-
-// } from './notes/Controllers/querys/controller.js'
+const {
+  addNote,
+  deleteNote,
+  editNoteStatus
+} = require('./notes/Controllers/mutations/mutations.js');
 
 const resolvers = {
   Query:{
@@ -36,7 +38,11 @@ const resolvers = {
   Mutation:{
     addStudent: addStudent,
     editStudentDir : editStudentDir,
-    deleteStudent: deleteStudent
+    deleteStudent: deleteStudent,
+
+    addNote: addNote,
+    deleteNote: deleteNote,
+    editNoteStatus: editNoteStatus
   },
 
   Student : {
