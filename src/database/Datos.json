@@ -8,7 +8,27 @@
       "city" : "Puerto Maldonado",
       "uni" : "Universidad Nacional Amazónica de Madre de Dios",
       "email" : "email@email.com",
-      "password" : "123"
+      "password" : "$2a$10$YtWpQcF3y0rScCzOfRjaYe.jxRPYei3nbHDgsDQZ7P8HmvKy5bT8m"
+    },
+    {
+      "id" : "4a9399f2-533a-4558-892f-c18c86965bf4",
+      "name" : "Luis",
+      "age" : 23,
+      "street" : "Av. Madre de Dios",
+      "city" : "Puerto Maldonado",
+      "uni" : "Universidad Nacional Amazónica de Madre de Dios",
+      "email" : "email2@email.com",
+      "password" : "$2a$10$D6h3qgBg8eyb/BQ.Wn4lBubI0Tmb9brwPPUnubwaGyZBnXoT1BbFG"
+    },
+    {
+      "id" : "15937062-048a-478e-bcba-b2e526539a90",
+      "name" : "Kevin",
+      "age" : 23,
+      "street" : "Av. Madre de Dios",
+      "city" : "Lima",
+      "uni" : "Universidad Nacional Amazónica de Madre de Dios",
+      "email" : "email2@email.com",
+      "password" : " $2a$10$34a1TVMSSyGN40Uj7y/QzuAQhvEk7qP0JpYMJv3CuZO/SgelWdfPG "
     }
   ],
   
@@ -16,9 +36,30 @@
     {
       "id" : "b8e2c85f-35b9-461b-995f-d84891a37986",
       "student_id" : "fe1d2187-92fa-4397-bc30-3a1ac9f7daf4",
-      "course" : "Aplicaciones Moviles",
+      "course" : "Moviles",
       "message" : "Realizar la tarea del aula virutal",
-      "done" : false
+      "status" : false
+    },
+    {
+      "id" : "c5349083-524b-49b4-93b4-56ba5a19e4a3",
+      "student_id" : "15937062-048a-478e-bcba-b2e526539a90",
+      "course" : "Programación",
+      "message" : "Realizar la tarea del aula virutal",
+      "status" : true
+    },
+    {
+      "id" : "8cef69d4-871e-46e8-be79-e1bb41675968",
+      "student_id" : "4a9399f2-533a-4558-892f-c18c86965bf4",
+      "course" : "Programación",
+      "message" : "Realizar la tarea del aula virutal",
+      "status" : true
+    },
+    {
+      "id" : "fc2938e3-60eb-4a98-9b50-880d442b6d25",
+      "student_id" : "fe1d2187-92fa-4397-bc30-3a1ac9f7daf4",
+      "course" : "Programación",
+      "message" : "Realizar la tarea del aula virutal",
+      "status" : true
     }
   ]
 }
