@@ -1,6 +1,6 @@
-import {gql} from 'apollo-server';
+const {gql} = require('apollo-server');
 
-export const typeDefs = gql`
+const typeDefs = gql`
 type Address {
   city: String!
   street: String
@@ -17,10 +17,21 @@ type Student {
   id: ID!
 }
 
+type Notes {
+  course: String!
+  message: String!
+  done: Boolean
+  student_id: ID!
+  id: ID!
+}
+
 type Query{
+  
   studentCount: Int!
   allStudents: [Student]!
-  findStudent(name: String!): Student
+  findStudent(name: String!): Student!
+
+  allMyNotes(id:ID!): [Notes]!
 }
 
 type Mutation{
@@ -38,3 +49,6 @@ type Mutation{
   ): String
 }
 `
+module.exports = {
+  typeDefs
+}

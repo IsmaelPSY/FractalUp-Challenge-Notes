@@ -1,32 +1,29 @@
-import { toPromise } from '../../../utils/toPromise.js'
-import {
+const { toPromise } = require('../../../utils/toPromise.js')
+const {
   studentCountCont,
   allStudentsCont,
   findStudentCont
-} from './controllers.js'
+} = require('./controllers.js');
 
-export const studentCount = async() => {
-  const [students,err] = await toPromise(studentCountCont())
-  if (error || !students) {
-    throw new Error("Something failed")
-  };
+const studentCount = async() => {
+  const students = studentCountCont()
   return students
 } 
 
-export const allStudents = async() => {
-  const [students,err] = await toPromise(allStudentsCont())
-  if (error || !students) {
-    throw new Error("Something failed")
-  };
+const allStudents = async() => {
+  const students = allStudentsCont()
   return students 
 }
 
-export const findStudent = async(root,params) => {
+const findStudent = async(root,params) => {
   const { name } = params
-  const [students,err] = await toPromise(findStudentCont(name))
-  if (error || !students) {
-    throw new Error("Something failed")
-  };
+  const students = findStudentCont(name)
   return students 
+}
+
+module.exports = {
+  studentCount,
+  allStudents,
+  findStudent
 }
 

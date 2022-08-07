@@ -1,26 +1,31 @@
-import datos from "../../../database/Datos.json" assert {type : "json"}
-
-import {v4 as uuid} from 'uuid';
+const datos = require("../../../database/Datos.json")
+const { hashPassword } = require("../../../utils/crypto");
+const uuid = require('uuid');
 
 const {students,notes} = datos
 
-export const addStudent = (root,params) => {
-  const {name} = params
-  if(students.find(student => student.name === name)){
+const addStudentCont = (params) => {
+  if(students.find(student => student.name === params.name)){
     throw new Error("Name must be unique")
   }
-  const student = {...params,id:uuid()}
+  const hashedPassword = hashPassword(params.password); 
+  const student = {
+    ...params,
+    id:uuid.v4(),
+    password: hashedPassword
+  }
   students.push(student)
   return student
 }
 
-export const deleteStudent = (root,params) => {
-  const {name} = params
+const deleteStudentCont = (params) => {
   const newList =  students.filter(student => {
-    console.log(student)
-    return student.name == name})
-  console.log(newList)
+    return student.name == params.name})
   students = newList
-  console.log(students)
-  return `Student ${name} deleted sucsessfully`
+  return `Student deleted sucsessfully`
+}
+
+module.exports = {
+  deleteStudentCont,
+  addStudentCont
 }

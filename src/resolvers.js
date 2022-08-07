@@ -1,45 +1,44 @@
 // --> Controllers for students <--
 //Querys
-import {
+const {
   studentCount,
   allStudents,
   findStudent
-} from './students/Controllers/querys/querys.js';
+} = require('./students/Controllers/querys/querys.js');
 
 // Mutations
-//  import {
-//    addStudent,
-//    deleteStudent
-//  } from './students/Controllers/mutations/controller.js';
+ const {
+   addStudent
+  //  deleteStudent
+ } = require('./students/Controllers/mutations/mutations.js');
 
 
 // --> Controllers for Notes <--
 //Querys
-// import {
-
-// } from './notes/Controllers/querys/controller.js'
+ const {
+  allMyNotes
+ } = require('./notes/Controllers/querys/querys.js');
 //Mutations
 // import {
 
 // } from './notes/Controllers/querys/controller.js'
 
-export const resolvers = {
+const resolvers = {
   Query:{
     studentCount: studentCount,
     allStudents: allStudents,
-    findStudent: findStudent
+    findStudent: findStudent,
+
+    allMyNotes: allMyNotes
   },
 
-  // Mutation:{
-  //   addStudent: addStudent,
-  //   removeStudent : deleteStudent
-  // },
+  Mutation:{
+    addStudent: addStudent,
+    // deleteStudent: deleteStudent
+  },
 
   Student : {
-    info: (root )=> `Hola mi nombre es ${root.name} tengo ${root.age} 
-                    años de edad, vivo en ${root.street}, ${root.city},
-                    y estudio en la ${root.uni}
-                    `,
+    info: (root )=> `Hola mi nombre es ${root.name} tengo ${root.age} años de edad, vivo en ${root.street}, ${root.city}, y estudio en la ${root.uni}`,
     address : (root) => {
       return {
         "city" : root.city,
@@ -48,3 +47,7 @@ export const resolvers = {
     }
   }
 };
+
+module.exports = {
+  resolvers
+}

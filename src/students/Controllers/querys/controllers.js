@@ -1,29 +1,21 @@
-import datos from '../../../database/Datos.json'
+const datos = require("../../../database/Datos.json")
 
 const {students} = datos
 
-export const studentCountCont = async () => {
-  const students = await models.students.count();
-  return students;
+const studentCountCont = () => {
+  return students.length;
 }
 
-export const allStudentsCont = async() => {
-  const students = await models.students.findAll({
-    attributes: {
-        exclude: ['password'],
-    },
-});
+const allStudentsCont = () => {
 return students
 } 
 
-export const findStudentCont = (name) => {
-  const students = models.students.findOne({
-    where: {name},
-    attributes: {
-      exclude: ['password'],
-    },
-  })
-  return students
+const findStudentCont = (name) => {
+  return students.find(student => student.name === name)
 }
 
-
+module.exports = {
+  allStudentsCont,
+  findStudentCont,
+  studentCountCont
+}
