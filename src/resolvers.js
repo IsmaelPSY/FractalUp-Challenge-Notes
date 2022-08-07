@@ -8,8 +8,9 @@ const {
 
 // Mutations
  const {
-   addStudent
-  //  deleteStudent
+  addStudent,
+  editStudentDir,
+  deleteStudent
  } = require('./students/Controllers/mutations/mutations.js');
 
 
@@ -34,7 +35,8 @@ const resolvers = {
 
   Mutation:{
     addStudent: addStudent,
-    // deleteStudent: deleteStudent
+    editStudentDir : editStudentDir,
+    deleteStudent: deleteStudent
   },
 
   Student : {

@@ -44,9 +44,16 @@ type Mutation{
     street: String
     uni: String!
     ): Student!
-  removeStudent(
-    name: String
-  ): String
+  
+  deleteStudent(
+    id: ID!
+  ): [Student]!
+
+  editStudentDir(
+    id: ID!
+    city: String!
+    street: String!
+  ): Student!
 }
 `
 module.exports = {

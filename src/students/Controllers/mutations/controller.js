@@ -18,14 +18,28 @@ const addStudentCont = (params) => {
   return student
 }
 
-const deleteStudentCont = (params) => {
-  const newList =  students.filter(student => {
-    return student.name == params.name})
-  students = newList
-  return `Student deleted sucsessfully`
+const deleteStudentCont = (id) => {
+  const studentIndex = students.findIndex( student => student.id == id);
+  if(studentIndex == -1) throw new Error("User not found");
+  students.splice(studentIndex,1)
+  return students
+}
+
+const editStudentDirCont = (params) => {
+  const {id,city,street} = params
+  const studentIndex = students.findIndex( student => student.id == id);
+  if(studentIndex == -1) throw new Error("User not found");
+  
+  const student  = students[studentIndex]
+  const updatedStudent = {...student,city:city,street:street}
+
+  students[studentIndex] = updatedStudent
+
+  return updatedStudent
 }
 
 module.exports = {
   deleteStudentCont,
-  addStudentCont
+  addStudentCont,
+  editStudentDirCont
 }
