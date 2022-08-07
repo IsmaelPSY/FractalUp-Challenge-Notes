@@ -1,0 +1,22 @@
+{
+  "students" : [
+    {
+      "id" : "fe1d2187-92fa-4397-bc30-3a1ac9f7daf4",
+      "name" : "Ismael",
+      "age" : 21,
+      "street" : "Av. Madre de Dios",
+      "city" : "Puerto Maldonado",
+      "uni" : "Universidad Nacional Amazónica de Madre de Dios"
+    }
+  ],
+  
+  "notes" : [
+    {
+      "id" : "b8e2c85f-35b9-461b-995f-d84891a37986",
+      "student_id" : "fe1d2187-92fa-4397-bc30-3a1ac9f7daf4",
+      "course" : "Aplicaciones Moviles",
+      "message" : "Realizar la tarea del aula virutal",
+      "done" : false
+    }
+  ]
+}
