@@ -6,7 +6,9 @@
       "age" : 21,
       "street" : "Av. Madre de Dios",
       "city" : "Puerto Maldonado",
-      "uni" : "Universidad Nacional Amazónica de Madre de Dios"
+      "uni" : "Universidad Nacional Amazónica de Madre de Dios",
+      "email" : "email@email.com",
+      "password" : "123"
     }
   ],
   
