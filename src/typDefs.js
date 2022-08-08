@@ -48,6 +48,10 @@ type Query{
   ): [Note]!
 }
 
+type Subscription {
+  notePosted: Student!
+}
+
 type Mutation{
   addStudent(
     email: String!
