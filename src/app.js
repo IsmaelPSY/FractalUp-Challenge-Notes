@@ -1,4 +1,4 @@
-const {ApolloServer} = require('apollo-server');
+const { ApolloServer } = require('apollo-server');
 const { resolvers} = require('./resolvers.js');
 const { typeDefs } = require('./typDefs.js');
 
